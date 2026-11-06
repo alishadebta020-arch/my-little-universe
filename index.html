@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Little Universe ✧</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#bfe3f5;--blue:#5f9fd0;--butter:#fff1b8;--peach:#ffd5c2;--cherry:#d8334f;--mint:#c8f0e0;--lilac:#e4d8f8;--ink:#4a3b52}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:18px 10px 40px;font-family:Nunito,Verdana,sans-serif;color:var(--ink);
+background:radial-gradient(circle at 10% 6%,#fff7cc 0,transparent 20%),radial-gradient(circle at 88% 18%,#fff 0,transparent 24%),radial-gradient(circle at 60% 60%,#ffffff99 0,transparent 20%),linear-gradient(180deg,var(--sky),#eaf3fb 45%,var(--peach)) fixed}
+.wrap{max-width:1150px;margin:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0}
+a{color:inherit}
+
+/* banner */
+.banner{text-align:center;padding:24px 10px;margin-bottom:16px;border:3px solid #fff;border-radius:20px;
+background:repeating-conic-gradient(#fff 0 25%,#ffe1e6 0 50%) 0 0/32px 32px;box-shadow:0 8px 24px #5f9fd040}
+.banner h1{display:inline-block;padding:6px 22px;background:#fffdf5;border-radius:40px;border:2px solid var(--cherry);color:var(--cherry);font-size:clamp(24px,5vw,42px);font-style:italic}
+.banner p{margin:10px 0 0;font-size:13px;color:#7a5a6a}
+
+/* desktop grid */
+.desk{display:grid;grid-template-columns:88px minmax(0,1fr) 260px;gap:14px;align-items:start}
+.icons{display:flex;flex-direction:column;gap:14px;position:sticky;top:10px}
+.icon{text-align:center;font-size:11px;text-decoration:none;font-weight:700}
+.icon i{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 4px;font-style:normal;font-size:30px;background:#fff;border:2px solid #fff;border-radius:18px;box-shadow:0 5px 12px #5f9fd040;transition:transform .2s}
+.icon:hover i{transform:translateY(-5px) rotate(-6deg)}
+
+/* windows */
+.win{background:#fffdf7;border:2px solid #fff;border-radius:14px;box-shadow:0 6px 18px #5f9fd038;overflow:hidden;margin-bottom:14px}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:7px 11px;font-size:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,#6fb3e0,#a9d8f2)}
+.bar.p{background:linear-gradient(90deg,#ee6b84,#ffb0a0)}
+.bar.y{background:linear-gradient(90deg,#ffe38a,#fff4c4);color:#7a5a20}
+.bar.l{background:linear-gradient(90deg,#b9a2e6,#e4d8f8);color:#fff}
+.bar.m{background:linear-gradient(90deg,#74cfae,#c8f0e0);color:#2c6a54}
+.bar b{letter-spacing:3px;font-size:11px}
+.pad{padding:14px;font-size:13px;line-height:1.75}
+.pad h3{font-size:18px;color:var(--cherry);margin-bottom:4px}
+.tag{display:inline-block;background:var(--lilac);color:#6a4f93;padding:3px 10px;border-radius:12px;font-size:11px;margin:3px 2px;font-weight:700}
+
+/* browser */
+.addr{display:flex;gap:8px;align-items:center;padding:8px 12px;background:#fff6dc;border-bottom:2px solid #fff}
+.addr span{flex:1;background:#fff;border:1px solid #f0dfb0;border-radius:20px;padding:5px 14px;font-size:12px;color:#8a7a9a}
+.dots i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px;background:var(--butter)}
+.pills a{text-decoration:none;font-weight:700;font-size:12px;padding:7px 16px;border-radius:20px;background:#fff;border:2px solid #fff;box-shadow:0 3px 8px #d8334f22}
+.pills a:hover{background:var(--cherry);color:#fff}
+.hero{padding:22px 16px 6px;text-align:center;background:linear-gradient(180deg,var(--butter),#fffdf7)}
+.hero h2{font-size:clamp(22px,4vw,32px);font-style:italic;color:var(--blue)}
+.hero p{font-size:13px}
+.polaroid{margin:8px auto 4px;max-width:520px;padding:10px 10px 12px;background:#fff;box-shadow:0 8px 20px #4a3b5238;transform:rotate(-1.3deg);position:relative}
+.polaroid img{width:100%;display:block}
+.polaroid::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:24px;margin-left:-45px;background:#ffd5c2cc;transform:rotate(3deg)}
+.polaroid figcaption{font-family:Fraunces,serif;font-style:italic;text-align:center;margin-top:8px;font-size:14px;color:var(--cherry)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid .win{margin:0}
+.full{grid-column:1/-1}
+
+/* side column */
+.me{text-align:center}
+.me .pic{aspect-ratio:1;display:grid;place-items:center;margin-bottom:10px;border:5px solid #fff;outline:2px dashed var(--peach);background:linear-gradient(145deg,var(--mint),var(--butter),var(--peach));font-family:Fraunces,serif;font-style:italic;font-size:17px}
+.me .nm{font-family:Fraunces,serif;font-size:22px;color:var(--cherry)}
+.on{font-size:12px;color:#3d8a63;margin-bottom:8px}.on::before{content:"● ";color:#4fc77f}
+.note{background:repeating-linear-gradient(#fffdf0 0 25px,#bfe3f5 25px 26px);padding:6px 14px 10px 32px;font-size:13px;line-height:26px;border-left:2px solid #f6b2bd}
+.note ol{margin:0;padding:0}
+.chat{background:#fff;font-size:12px;line-height:1.6;padding:10px;min-height:150px}
+.chat b{color:var(--blue)}.chat b.o{color:var(--cherry)}
+.chat p{margin:0 0 4px}
+.fake{display:flex;gap:6px;padding:8px;background:var(--mint)}
+.fake span{flex:1;background:#fff;border-radius:8px;padding:5px 9px;font-size:12px;color:#99a}
+.fake em{font-style:normal;background:var(--cherry);color:#fff;border-radius:8px;padding:5px 9px;font-size:12px}
+
+/* game */
+.game{margin-top:16px}
+.gw{position:relative;overflow:hidden;border-radius:12px;border:3px solid #fff;background:#34457a;margin-bottom:12px}
+#gameCanvas{display:block;width:100%;height:auto;touch-action:none}
+#factPopup{position:absolute;z-index:5;top:50%;left:50%;transform:translate(-50%,-50%);width:min(88%,380px);padding:16px;text-align:center;background:linear-gradient(145deg,#fff,var(--butter));border:3px solid #fff;border-radius:16px;box-shadow:0 0 30px #ffb0a0cc;font-size:13px;line-height:1.6}
+#factPopup h3{font-size:18px;color:var(--cherry)}
+.em{font-size:42px;margin:6px 0}.cap{font-size:11px;font-weight:700;color:#b0506a;margin-bottom:8px}
+.btn{border:0;padding:11px 20px;border-radius:22px;color:#fff;background:linear-gradient(120deg,var(--cherry),#ff8a80);font:700 12px Nunito,sans-serif;cursor:pointer;box-shadow:0 4px 12px #d8334f55}
+.btn:hover{filter:brightness(1.1)}
+.meme{position:relative;height:150px;margin:8px 0;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#ffd5c2,#e4d8f8,#bfe3f5);display:grid;place-items:center;border:2px solid #fff}
+.meme .e{font-size:54px}
+.meme .t,.meme .b{position:absolute;left:6px;right:6px;text-align:center;font:900 15px/1.1 Impact,Haettenschweiler,"Arial Black",sans-serif;color:#fff;text-transform:uppercase;text-shadow:-1.5px -1.5px 0 #000,1.5px -1.5px 0 #000,-1.5px 1.5px 0 #000,1.5px 1.5px 0 #000}
+.meme .t{top:6px}.meme .b{bottom:6px}
+#factPopup.secret{max-height:96%;overflow:auto;border-color:#ffe27a;box-shadow:0 0 36px #ffe27acc}
+.hint{font-size:12px;color:#7a6a88;margin:10px 0 0}
+.foot{text-align:center;font-size:12px;color:#8a7a9a;padding:22px 10px}
+
+@media(max-width:860px){
+.desk{grid-template-columns:1fr}
+.icons{flex-direction:row;flex-wrap:wrap;justify-content:center;position:static}
+.grid{grid-template-columns:1fr}.full{grid-column:auto}
+.side{order:3}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.me .pic {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.me .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="banner">
+  <h1>my little universe ☀</h1>
+  <p>an internet diary, forever under construction, best viewed with a cold drink 🍒</p>
+</header>
+
+<div class="desk" id="home">
+
+  <nav class="icons">
+    <a class="icon" href="#summer"><i>🌴</i>summer</a>
+    <a class="icon" href="#interests"><i>📚</i>books</a>
+    <a class="icon" href="#chat"><i>💬</i>chat</a>
+    <a class="icon" href="#interests"><i>🌍</i>world</a>
+    <a class="icon" href="#game"><i>🚀</i>arcade</a>
+  </nav>
+
+  <main>
+    <section class="win">
+      <div class="addr">
+        <span class="dots"><i style="background:#f08aa0"></i><i style="background:#f6d37a"></i><i style="background:#8fd3ac"></i></span>
+        <span>✧ www.my-little-universe.com</span>
+      </div>
+      <div class="pills"><a href="#home">home</a><a href="#about">about me</a><a href="#interests">projects</a><a href="#game">arcade</a></div>
+      <div class="hero" id="summer">
+        <h2>welcome to my little corner of the internet</h2>
+        <p>Currently exploring. Currently overthinking. Always curious.</p>
+        <figure class="polaroid">
+          <img src="summer-moodboard.jpg" alt="Summer moodboard: cherries, palm trees, birthday cake and golden-hour photos">
+          <figcaption>the summer moodboard ☀🍒</figcaption>
+        </figure>
+      </div>
+      <div class="pad" id="about" style="text-align:center">
+        Engineering student by degree, curious about almost everything by nature.<br>
+        Somewhere between technology, finance, books and geopolitics, I'm figuring things out.
+      </div>
+    </section>
+
+    <div class="grid" id="interests">
+      <section class="win"><div class="bar m">the_world.exe<b>_ □ ×</b></div><div class="pad"><h3>The world, through my tabs</h3>Geopolitics, economics, energy markets and the occasional rabbit hole.<br><span class="tag">world affairs</span><span class="tag">economics</span></div></section>
+      <section class="win"><div class="bar p">bookshelf.exe<b>_ □ ×</b></div><div class="pad"><h3>Fictional worlds, real ideas</h3>Fantasy, dystopian fiction and books that make me question things.<br><span class="tag">fantasy</span><span class="tag">dystopia</span></div></section>
+      <section class="win"><div class="bar y">money.exe<b>_ □ ×</b></div><div class="pad"><h3>Numbers, markets and ideas</h3>Finance, market cycles and the stories behind the numbers.<br><span class="tag">finance</span><span class="tag">markets</span></div></section>
+      <section class="win"><div class="bar l">my_experiments.exe<b>_ □ ×</b></div><div class="pad"><h3>Things I've been building</h3>Python experiments, electronics, circuits and little coding projects.<br><span class="tag">python</span><span class="tag">electronics</span></div></section>
+      <section class="win full"><div class="bar">game_lab.exe<b>_ □ ×</b></div><div class="pad"><h3>Building new worlds</h3>Part of an XR team. Interested in game creation, immersive technology and bringing Indian stories into interactive worlds.<br><span class="tag">XR</span><span class="tag">game development</span><span class="tag">unity</span></div></section>
+    </div>
+  </main>
+
+  <aside class="side">
+    <section class="win me">
+      <div class="bar p">profile.exe<b>_ □ ×</b></div>
+      <div class="pad">
+        <div class="pic">
+  <img src="my-photo.jpg" alt="My profile photo">
+</div>
+        <div class="nm">curious.exe</div>
+        <div class="on">online, exploring</div>
+        <div style="font-size:12px;line-height:1.9;text-align:left"><b>Studying:</b> ENTC engineering<br><b>Location:</b> India<br><b>Mood:</b> sunny, curious<br><b>Open tabs:</b> too many</div>
+      </div>
+    </section>
+    <section class="win">
+      <div class="bar y">my_fav_things.txt<b>_ □ ×</b></div>
+      <div class="note"><ol><li>fantasy and dystopian books</li><li>semiconductor rabbit holes</li><li>finance deep dives</li><li>python experiments</li><li>cherries in summer 🍒</li></ol></div>
+    </section>
+    <section class="win" id="chat">
+  <div class="bar m">messenger<b>_ □ ×</b></div>
+
+  <div class="chat" id="chatMessages">
+    <p><b class="o">curious.exe:</b> what if I build a whole universe</p>
+    <p><b>summer_bot:</b> do it, I'll bring snacks 🍉</p>
+    <p><b class="o">curious.exe:</b> opening tab number 21...</p>
+    <p><b>summer_bot:</b> of course you are ✨</p>
+  </div>
+
+  <div class="fake">
+    <input id="chatInput" type="text" placeholder="type something sweet..." autocomplete="off">
+    <button id="sendChat" type="button">send ✧</button>
+  </div>
+</section>
+    </section>
+  </aside>
+</div>
+
+<section class="win game" id="game">
+  <div class="bar p">arcade.exe<b>_ □ ×</b></div>
+  <div class="pad" style="text-align:center">
+    <h2 style="color:var(--blue);font-size:24px">a little world of my own</h2>
+    <p>Fly through a summer sunset. Every collision reveals another little discovery.</p>
+    <div class="gw" id="gameWrap"><canvas id="gameCanvas" width="800" height="360"></canvas></div>
+    <button class="btn" id="startGame">enter my universe ✧</button>
+    <p class="hint">Use the arrow keys to move your spaceship, or touch and drag inside the game area.</p>
+  </div>
+</section>
+
+<footer class="foot">made with curiosity, too many tabs and a little bit of magic ✧</footer>
+</div>
+
+<script>
+const cv=document.getElementById("gameCanvas"),c=cv.getContext("2d"),btn=document.getElementById("startGame"),wrap=document.getElementById("gameWrap");
+let playing=false,f=0,keys={},ptr=false,last=-1,stars=[],obs=[],ac=null,pt=0,found=false;
+const ship={x:145,y:180,b:0};
+const facts=[
+"I can go from semiconductors to geopolitics in one afternoon.",
+"I'm a first-year ENTC student exploring electronics and software.",
+"I've joined an XR game development team and want to build worlds of my own.",
+"Fantasy novels and dystopian worlds are my favourite escape routes.",
+"I'm fascinated by finance and the stories behind market movements.",
+"I have approximately twenty tabs open in my brain at all times.",
+"I enjoy connecting seemingly unrelated ideas and seeing where they lead.",
+"I'm learning Python and exploring programming.",
+"I'm interested in how Indian mythology could inspire video games.",
+"I can spend an unreasonable amount of time researching one specific topic.",
+"I'm still figuring out what I want to build, and that's part of the fun.",
+"This universe is what happens when I let curiosity take over."];
+const reactions=[["💎👑✨","THE MAIN CHARACTER HAS ARRIVED."],["🤨❓","WAIT. WHAT DID I JUST DISCOVER?"],["🔥🏠😌","EVERYTHING IS FINE. PROBABLY."],["🧠⚡","MY BRAIN HAS OPENED ANOTHER TAB."],["💅💫","CASUALLY COLLECTING DISCOVERIES."],["✨📈","THE PLOT JUST GOT BETTER."]];
+const things=["🍒","☀️","🌴","🍉","🪐","🍦"];
+for(let i=0;i<90;i++)stars.push({x:Math.random()*800,y:Math.random()*360,s:Math.random()*2+.5,v:.5+Math.random()*2,a:.3+Math.random()*.7});
+
+function beep(){try{const A=window.AudioContext||window.webkitAudioContext;if(!A)return;ac=ac||new A();const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime;o.type="triangle";o.frequency.setValueAtTime(700,t);o.frequency.exponentialRampToValueAtTime(200,t+.3);g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.35);o.connect(g);g.connect(ac.destination);o.start();o.stop(t+.35)}catch(e){}}
+
+function drawShip(){
+ const t=keys.ArrowUp?-.12:keys.ArrowDown?.12:0;
+ c.save();c.translate(ship.x,ship.y+Math.sin(ship.b)*5);c.rotate(t);
+ const fl=22+Math.random()*14;c.fillStyle=f%10<5?"#ffd0e8":"#fff0a8";
+ c.beginPath();c.moveTo(-24,-8);c.lineTo(-24-fl,0);c.lineTo(-24,8);c.fill();
+ const g=c.createLinearGradient(0,-20,0,20);g.addColorStop(0,"#fff");g.addColorStop(.5,"#ffd9e6");g.addColorStop(1,"#f08aa8");
+ c.fillStyle=g;c.beginPath();c.ellipse(0,0,34,20,0,0,7);c.fill();
+ c.fillStyle="#fff7cf";c.beginPath();c.moveTo(22,-13);c.lineTo(42,0);c.lineTo(22,13);c.fill();
+ c.fillStyle="#6fb3e0";c.beginPath();c.ellipse(12,-3,14,12,0,0,7);c.fill();
+ c.fillStyle="#fff";c.beginPath();c.arc(9,-5,2.5,0,7);c.arc(18,-5,2.5,0,7);c.fill();
+ c.strokeStyle="#3d5f86";c.lineWidth=1.6;c.beginPath();c.arc(14,2,4,.15,3);c.stroke();
+ c.restore();
+}
+
+function showFact(){
+ playing=false;beep();
+ let i=Math.floor(Math.random()*facts.length);if(i===last)i=(i+1)%facts.length;last=i;
+ const r=reactions[Math.floor(Math.random()*reactions.length)];
+ const p=document.createElement("div");p.id="factPopup";
+ p.innerHTML=`<h3>✧ a little discovery ✧</h3><div class="em">${r[0]}</div><div class="cap">${r[1]}</div><p>${facts[i]}</p><button class="btn" id="go">continue exploring ✧</button>`;
+ wrap.appendChild(p);
+ document.getElementById("go").onclick=()=>{p.remove();playing=true;btn.textContent="flying ✧"};
+}
+
+function loop(){
+ const g=c.createLinearGradient(0,0,0,360);g.addColorStop(0,"#34457a");g.addColorStop(.6,"#a78bc9");g.addColorStop(1,"#ffbfa3");
+ c.fillStyle=g;c.fillRect(0,0,800,360);f++;
+ stars.forEach(s=>{c.globalAlpha=s.a;c.fillStyle="#fff";c.fillRect(s.x,s.y,s.s,s.s);if(playing){s.x-=s.v;if(s.x<0){s.x=800;s.y=Math.random()*360}}});
+ c.globalAlpha=1;c.font="36px serif";c.textAlign="center";c.textBaseline="middle";
+ obs.forEach(o=>{c.fillText(o.e,o.x,o.y);if(playing)o.x-=o.v});
+ obs=obs.filter(o=>o.x>-50);
+ drawShip();
+ if(playing){
+  ship.b+=.09;
+  if(keys.ArrowUp)ship.y-=4;if(keys.ArrowDown)ship.y+=4;if(keys.ArrowLeft)ship.x-=4;if(keys.ArrowRight)ship.x+=4;
+  ship.x=Math.max(45,Math.min(755,ship.x));ship.y=Math.max(35,Math.min(325,ship.y));
+  if(f%75===0)obs.push({x:850,y:40+Math.random()*280,v:4+Math.random()*2,e:things[Math.floor(Math.random()*things.length)]});
+  for(let i=obs.length-1;i>=0;i--){if(Math.hypot(ship.x-obs[i].x,ship.y-obs[i].y)<48){obs.splice(i,1);showFact();break}}
+ }
+ requestAnimationFrame(loop);
+}
+loop();
+
+function aim(e){const r=cv.getBoundingClientRect();ship.x=Math.max(45,Math.min(755,(e.clientX-r.left)*cv.width/r.width));ship.y=Math.max(35,Math.min(325,(e.clientY-r.top)*cv.height/r.height))}
+cv.addEventListener("pointerdown",e=>{ptr=true;if(playing)aim(e)});
+cv.addEventListener("pointermove",e=>{if(ptr&&playing)aim(e)});
+cv.addEventListener("pointerup",()=>ptr=false);
+cv.addEventListener("pointerleave",()=>ptr=false);
+btn.addEventListener("click",()=>{if(!playing&&!document.getElementById("factPopup")){playing=true;btn.textContent="flying ✧"}});
+document.addEventListener("keydown",e=>{if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)){if(playing)e.preventDefault();keys[e.key]=true}});
+document.addEventListener("keyup",e=>keys[e.key]=false);
+window.addEventListener("blur",()=>{keys={};ptr=false});
+// MESSENGER FUNCTION
+
+const chatMessages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const sendChat = document.getElementById("sendChat");
+
+// Summer emoji collection
+const summerEmojis = [
+  "❤️", "🍒", "☀️", "🌴",
+  "🍉", "🪐", "🍦", "✨"
+];
+
+let emojiIndex = 0;
+
+// Little bot responses
+const botReplies = [
+  "tell me more!! ✨",
+  "wait, that's actually interesting",
+  "I support this adventure 🍒",
+  "another tab has opened, hasn't it?",
+  "brb, adding this to our universe ☀️",
+  "okay, now we're getting somewhere!",
+  "the plot thickens... 👀",
+  "and that's why we love this little universe"
+];
+
+let replyIndex = 0;
+
+// Add a message to the chat
+function addMessage(sender, message, mine) {
+  const p = document.createElement("p");
+  p.className = mine ? "mine" : "theirs";
+
+  const name = document.createElement("b");
+  name.className = mine ? "o" : "";
+  name.textContent = sender + ": ";
+
+  p.appendChild(name);
+  p.appendChild(document.createTextNode(message));
+
+  chatMessages.appendChild(p);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Make a summer emoji float away
+function floatEmoji() {
+  const emoji = document.createElement("span");
+
+  emoji.className = "chat-float";
+  emoji.textContent = summerEmojis[emojiIndex];
+
+  emoji.style.left = (15 + Math.random() * 70) + "%";
+
+  chatMessages.appendChild(emoji);
+
+  emojiIndex = (emojiIndex + 1) % summerEmojis.length;
+
+  setTimeout(() => emoji.remove(), 1600);
+}
+
+// Send a message
+function sendMessage() {
+  const message = chatInput.value.trim();
+
+  if (message === "") return;
+
+  addMessage("curious.exe", message, true);
+  floatEmoji();
+
+  chatInput.value = "";
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Summer bot replies
+  setTimeout(() => {
+    const reply = botReplies[replyIndex];
+
+    addMessage("summer_bot", reply, false);
+
+    replyIndex = (replyIndex + 1) % botReplies.length;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 650);
+}
+
+// Send button
+sendChat.addEventListener("click", sendMessage);
+
+// Enter key
+chatInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+</script>
+</body>
+</html>
